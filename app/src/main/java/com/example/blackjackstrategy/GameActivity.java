@@ -1,53 +1,71 @@
 package com.example.blackjackstrategy;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GameActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Button buttonHit;
-    private Button buttonStay;
-    private Button buttonA;
+public class GameActivity extends AppCompatActivity {
+    private Button selectedButton;
+    private List<Button> cardButtons;
+
+    private int playerValue;
+    private TextView playerValueTextView;
+    private int[] cardButtonIds = {
+            R.id.button_A,
+            R.id.button_2,
+            R.id.button_3,
+            R.id.button_4,
+            R.id.button_5,
+            R.id.button_6,
+            R.id.button_7,
+            R.id.button_8,
+            R.id.button_9,
+            R.id.button_10,
+            R.id.button_J,
+            R.id.button_Q,
+            R.id.button_K
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        playerValue = 0;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Find the buttons in the layout
-        buttonHit = findViewById(R.id.button_hit);
-        buttonStay = findViewById(R.id.button_stay);
-        buttonA = findViewById(R.id.buttonA);
+        cardButtons = new ArrayList<>();
+        for (int id : cardButtonIds) {
+            Button button = findViewById(id);
+            cardButtons.add(button);
+            int index = cardButtons.size() - 1;
+            button.setOnClickListener(v -> handleCardButtonClick(cardButtons.get(index), index + 1));
+        }
+        playerValueTextView = findViewById(R.id.textView_playerValue);
+    }
 
-        // Set click listeners for the buttons
-        buttonHit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Perform actions when "Hit" button is clicked
-                // Add your logic here
-                Toast.makeText(GameActivity.this, "You clicked Hit", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void handleCardButtonClick(Button button, int cardValue) {
+        if (selectedButton != null && selectedButton != button) {
+            selectedButton.setSelected(false);
+            playerValue = 0;
+        }
 
-        buttonStay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Perform actions when "Stay" button is clicked
-                // Add your logic here
-                Toast.makeText(GameActivity.this, "You clicked Stay", Toast.LENGTH_SHORT).show();
-            }
-        });
+        if(button.isSelected())
+        {
+            playerValue -= cardValue;
+        }
+        else
+        {
+            playerValue += cardValue;
+        }
 
-        buttonStay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Perform actions when "A" button is clicked
-                // Add your logic here
-                Toast.makeText(GameActivity.this, "You clicked A", Toast.LENGTH_SHORT).show();
-            }
-        });
+        button.setSelected(!button.isSelected());
+        selectedButton = button;
+
+        playerValueTextView.setText("Player Value: " + playerValue);
     }
 }

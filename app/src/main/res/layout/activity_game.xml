@@ -3,34 +3,156 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".GameActivity">
 
     <!-- Button for "Hit" -->
-    <Button
-        android:id="@+id/button_hit"
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Players First Card" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Add buttons for cards A to 6 -->
+
+        <Button
+            android:id="@+id/button_A"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Add buttons for cards 7 to K -->
+
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="9"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="10"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_J"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="J"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_Q"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Q"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/button_K"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="K"
+            android:backgroundTint="@color/button_background_color"
+            android:textColor="@color/button_text_color" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_playerValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hit" />
-
-    <!-- Button for "Stay" -->
-    <Button
-        android:id="@+id/button_stay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stay"
-        android:background="@drawable/button_selector"/>
-
-    <!-- Add buttons for each card -->
-    <Button
-        android:id="@+id/buttonA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A"
-        android:background="@drawable/button_selector" />
-
-    <!-- Add buttons for other cards (B to K) in a similar manner -->
+        android:text="Player Value: 0" />
 
 </LinearLayout>
