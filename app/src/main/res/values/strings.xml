@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">BlackJackStrategy</string>
+    <string name="players_value">Players Value: 0</string>
+    <string name="dealers_value">Dealers Value: 0</string>
+    <string name="dealers_face_card">Dealers Face Card</string>
+    <string name="players_second_card">Players Second Card</string>
+    <string name="players_first_card">Players First Card</string>
+    <string name="card_A">A</string>
+    <string name="card_2">2</string>
+    <string name="card_3">3</string>
+    <string name="card_4">4</string>
+    <string name="card_5">5</string>
+    <string name="card_6">6</string>
+    <string name="card_7">7</string>
+    <string name="card_8">8</string>
+    <string name="card_9">9</string>
+    <string name="card_10">10</string>
+    <string name="card_J">J</string>
+    <string name="card_Q">Q</string>
+    <string name="card_K">K</string>
 </resources>
